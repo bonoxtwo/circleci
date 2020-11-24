@@ -1,20 +1,21 @@
 version: 2.1
 
 jobs:
-        test:
-                docker:
-                        - image: python:3.6
-                steps:
-                        - checkout
-                        - run: pip install flask pytest
-                        - run: py.test
-                        - run: mkdir /tmp
-                        - run: zip /tmp/hello-latest.zip *.py
-                        - store_artifacts:
-                                path: /tmp/hello-latest.zip
-                                destination: hello-latest.zip
+ test:
+  docker:
+   - image: python:3.6
+  steps:
+   - checkout
+   - run: pip install flask pytest
+   - run: py.test
+   - run: apt update
+   - run: apt install zip
+   - run: zip /tmp/hello-latest.zip *.py
+   - store_artifacts:
+       path: /tmp/hello-latest.zip
+       destination: hello-latest.zip
  
 workflows:
-        welcome:
-                jobs:
-                        - test
+ welcome:
+ jobs:
+  - test
