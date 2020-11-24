@@ -2,7 +2,7 @@
 version: 2.1
 # Use a package of configuration called an orb.
 jobs:
- hello:
+ test:
   docker:
    - image: python:3.6
   steps:
@@ -13,4 +13,4 @@ jobs:
 workflows:
  welcome:
   jobs:
-   - hello 
+   - test 
