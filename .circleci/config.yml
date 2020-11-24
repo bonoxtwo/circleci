@@ -8,8 +8,6 @@ jobs:
    - checkout
    - run: pip install flask pytest
    - run: py.test
-   - run: apt update
-   - run: apt install zip
    - run: zip /tmp/hello-latest.zip *.py
    - store_artifacts:
        path: /tmp/hello-latest.zip
@@ -17,5 +15,5 @@ jobs:
  
 workflows:
  welcome:
- jobs:
-  - test
+  jobs:
+   - test 
