@@ -8,6 +8,7 @@ jobs:
    - checkout
    - run: pip install flask pytest
    - run: py.test
+   - run: mkdir /tmp
    - run: zip /tmp/hello-latest.zip *.py
    - store_artifacts:
     path: /tmp/hello-latest.zip
