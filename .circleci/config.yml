@@ -5,13 +5,11 @@ jobs:
  hello:
   machine: true
   steps:
-   - run:
-    command:
-     TEXT = cat "message.txt"
    - checkout
+   - run: TEXT="cat message.txt"
    - run: echo "Hello, world!"
    - run: cat .circleci/config.yml
-   - run: "curl -X POST -H 'Content-type: application/json' --data '{\"text\":\"${TEXT}\"}' ${SLACK_API_URL}"
+   - run: "curl -X POST -H 'Content-type: application/json' --data '{\"text\":\"'${TEXT}'\"}' ${SLACK_API_URL}"
    
 workflows:
  welcome:
