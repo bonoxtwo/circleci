@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 hi im jaekkim
+=======
+from jaekkim
+hi?
+>>>>>>> dfc8229345586097fb1102ee73ae49ca526817fa
