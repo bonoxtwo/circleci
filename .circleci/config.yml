@@ -20,7 +20,7 @@ jobs:
  slack_notify:
   machine: true
   steps:
-   - run: "curl-XPOST-H'Content-type:application/json'--data'{\"text\":\"Hello,jaekkim!\"}'${SLACK_API_URL}"
+   - run: "curl -XPOST -H 'Content-type:application/json' --data '{\"text\":\"Hello,jaekkim!\"}' ${SLACK_API_URL}"
 
 workflows:
  welcome:
