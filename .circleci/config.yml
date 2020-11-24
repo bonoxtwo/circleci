@@ -7,7 +7,7 @@ jobs:
   steps:
    - run: echo "Hello, world!"
    - run: echo "This is message in CircleCI worker."
-   "curl -X POST -H 'Content-type: application/json' --data '{\"text\":\" Hello, jaekkim!\"}' https://hooks.slack.com/services/T01FCLYDL02/B01F9JQ7VUM/eme SnzqFNRPtk6ZYLpv7IlpW"
+   - run: "curl -X POST -H 'Content-type: application/json' --data '{\"text\":\" Hello, jaekkim!\"}' https://hooks.slack.com/services/T01FCLYDL02/B01F9JQ7VUM/eme SnzqFNRPtk6ZYLpv7IlpW"
    - run: pwd
    - run: uname -a
    - run: ps
