@@ -13,4 +13,8 @@ jobs:
 workflows:
  welcome:
   jobs:
-   - test 
+   - test:
+      filters:
+              branches:
+                      only:
+                              -master
