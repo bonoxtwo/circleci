@@ -1,4 +1,4 @@
-version: 2.1
+version:2.1
 
 jobs:
  test1:
@@ -9,25 +9,25 @@ jobs:
    - run: pip install flask pytest
    - run: py.test
 
- test2:
-  docker:
-   - image: python:3.6
-  steps:
-   - checkout
-   - run: pip install flask pytest
-   - run: py.test 
+test2:
+ docker:
+  -image:python:3.6
+ steps:
+  - checkout
+  -run: pip install flask pytest
+  -run: py.test
 
- slack_notify:
-  machine: true
-  steps:
-   -run: "curl -X POST -H 'Content-type: application/json' --data '{\"text\":\" Hello, jaekkim!\"}' ${SLACK_API_URL}"
+slack_notify:
+ machine: true
+ steps:
+  -run: "curl-XPOST-H'Content-type:application/json'--data'{\"text\":\"Hello,jaekkim!\"}'${SLACK_API_URL}"
 
 workflows:
  welcome:
   jobs:
    - test1
    - test2
-   - slack_notify:
+   -slack_notify:
      requires:
       - test1
       - test2
