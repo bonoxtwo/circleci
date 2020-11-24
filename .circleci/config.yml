@@ -2,12 +2,12 @@
 version: 2.1
 # Use a package of configuration called an orb.
 jobs:
-  hello:
-   machine: true
-   steps:
-    - run: echo "Hello, world!"
+ hello:
+  machine: true
+  steps:
+   - run: echo "Hello, world!"
 
 workflows:
  welcome:
   jobs:
-   - hello
+   - hello 
